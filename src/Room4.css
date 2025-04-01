@@ -1,0 +1,40 @@
+.room-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem;
+  background-color: #1c0f13;
+  color: #f5e0e7;
+  font-family: 'Georgia', serif;
+  line-height: 1.6;
+}
+h1 {
+  color: #e11d48;
+}
+h2 {
+  color: #c084fc;
+}
+p {
+  margin-bottom: 1rem;
+}
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.card {
+  background: #222;
+  padding: 1rem;
+  border-radius: 8px;
+  width: 100px;
+  text-align: center;
+  transition: 0.3s;
+  border: 2px solid transparent;
+}
+.card.pure {
+  border-color: crimson;
+  background-color: #4b0000;
+}
+.card.impure {
+  opacity: 0.3;
+}
