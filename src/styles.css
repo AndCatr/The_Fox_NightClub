@@ -1,0 +1,15 @@
+body {
+  font-family: sans-serif;
+  background: #111;
+  color: white;
+  margin: 0;
+  padding: 2rem;
+}
+a {
+  color: #f47340;
+  text-decoration: none;
+}
+.container {
+  max-width: 800px;
+  margin: auto;
+}

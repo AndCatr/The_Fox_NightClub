@@ -1,0 +1,1 @@
+const Room1 = () => <div>🦩 La Gabbia Dorata - Coming Soon</div>; export default Room1;

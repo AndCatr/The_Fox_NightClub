@@ -1,0 +1,1 @@
+const Room2 = () => <div>🪷 Il Giardino di Danae - Coming Soon</div>; export default Room2;

@@ -1,0 +1,1 @@
+const Room4 = () => <div>🔻 La Camera di Báthory - Coming Soon</div>; export default Room4;

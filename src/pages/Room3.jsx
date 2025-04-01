@@ -1,0 +1,1 @@
+const Room3 = () => <div>⚜️ La Chambre de Sade - Coming Soon</div>; export default Room3;
