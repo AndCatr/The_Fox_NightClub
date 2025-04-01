@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Room4.css';
+import '../Room4.css';
 
 const pureCards = [
   { id: 1, color: 'Rosso', form: 'Goccia', number: 3, phrase: 'Solo la Goccia può dire la verità.' },
