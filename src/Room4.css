@@ -7,15 +7,6 @@
   font-family: 'Georgia', serif;
   line-height: 1.6;
 }
-h1 {
-  color: #e11d48;
-}
-h2 {
-  color: #c084fc;
-}
-p {
-  margin-bottom: 1rem;
-}
 .card-grid {
   display: flex;
   flex-wrap: wrap;
