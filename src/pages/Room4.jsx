@@ -1,4 +1,4 @@
-// src/pages/AccessoRoom4.jsx
+// src/pages/Room4.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../Room4.css';
@@ -22,7 +22,7 @@ const AccessoRoom4 = () => {
   const handleConfirm = () => {
     if (code === '5555') {
       sessionStorage.setItem('accessGrantedRoom4', 'true');
-      navigate('/Room4Carte');
+      navigate('/room4-carte');
     } else {
       setError(true);
       setTimeout(() => {
@@ -51,4 +51,4 @@ const AccessoRoom4 = () => {
   );
 };
 
-export default AccessoRoom4;
+export default Room4;
