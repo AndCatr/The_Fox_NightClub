@@ -43,7 +43,7 @@ const AccessoRoom4 = () => {
               <button key={num} onClick={() => handleButtonClick(num.toString())}>{num}</button>
             ))}
             <button onClick={handleClear} className="clear">Cancella</button>
-            <button onClick={handleConfirm} className="confirm">Conferma</button>
+            <button onClick={handleConfirm} className="confirm">↵</button>
           </div>
         </div>
       </div>
