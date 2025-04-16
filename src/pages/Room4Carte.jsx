@@ -27,7 +27,7 @@ const Room4Carte = () => {
 
   return (
     <div className="carte-container">
-      <h1>🃏 Le Sei Carte del Destino</h1>
+      <h1>🃏 Scegli le 4 situazioni da proporre al cliente</h1>
       <div className="carte-grid">
         {carte.map((carta) => (
           <div
