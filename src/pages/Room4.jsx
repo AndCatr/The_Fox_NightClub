@@ -1,7 +1,7 @@
 // src/pages/Room4Carte.jsx
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../Room4Carte.css';
+import './Room4Carte.css';
 
 const carte = [
   { id: 1, nome: 'Il Corvo', descrizione: 'Messaggero delle ombre, annuncia verità nascoste.', simbolo: '🦉' },
