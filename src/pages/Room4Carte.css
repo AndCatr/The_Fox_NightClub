@@ -38,11 +38,12 @@
 }
 
 .immagine-carta {
-  width: 100px;
+  width: 120px;
   height: auto;
-  margin-bottom: 0.5rem;
-  border-radius: 8px;
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
+  margin-bottom: 0.75rem;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.15);
+  transition: transform 0.2s ease;
 }
 
 .simbolo {
