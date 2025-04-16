@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+// src/pages/AccessoRoom4.jsx
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../Room4.css';
 
@@ -6,21 +7,6 @@ const AccessoRoom4 = () => {
   const [code, setCode] = useState('');
   const [error, setError] = useState(false);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    if (code.length === 4) {
-      if (code === '5555') {
-        sessionStorage.setItem('accessGrantedRoom4', 'true');
-        navigate('/room4');
-      } else {
-        setError(true);
-        setTimeout(() => {
-          setCode('');
-          setError(false);
-        }, 1000);
-      }
-    }
-  }, [code, navigate]);
 
   const handleButtonClick = (digit) => {
     if (code.length < 4) {
@@ -31,6 +17,19 @@ const AccessoRoom4 = () => {
   const handleClear = () => {
     setCode('');
     setError(false);
+  };
+
+  const handleConfirm = () => {
+    if (code === '5555') {
+      sessionStorage.setItem('accessGrantedRoom4', 'true');
+      navigate('/room4-carte');
+    } else {
+      setError(true);
+      setTimeout(() => {
+        setCode('');
+        setError(false);
+      }, 1000);
+    }
   };
 
   return (
@@ -44,6 +43,7 @@ const AccessoRoom4 = () => {
               <button key={num} onClick={() => handleButtonClick(num.toString())}>{num}</button>
             ))}
             <button onClick={handleClear} className="clear">Cancella</button>
+            <button onClick={handleConfirm} className="confirm">Conferma</button>
           </div>
         </div>
       </div>
