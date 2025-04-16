@@ -1,55 +1,46 @@
-// src/pages/AccessoRoom4.jsx
-import React, { useState } from 'react';
+// src/pages/Room4Carte.jsx
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../Room4.css';
-import './Room4Carte.css'
+import './Room4Carte.css';
 
-const AccessoRoom4 = () => {
-  const [code, setCode] = useState('');
-  const [error, setError] = useState(false);
+const carte = [
+  { id: 1, nome: 'Il Corvo', descrizione: 'Messaggero delle ombre, annuncia verità nascoste.', simbolo: '🦉' },
+  { id: 2, nome: 'La Chiave Antica', descrizione: 'Apre porte spirituali sigillate dal tempo.', simbolo: '🗝️' },
+  { id: 3, nome: 'L’Occhio Inverso', descrizione: 'Vede ciò che è celato, ma distorce la realtà.', simbolo: '👁️' },
+  { id: 4, nome: 'La Coppa del Sangue', descrizione: 'Contiene il potere di un giuramento eterno.', simbolo: '🩸' },
+  { id: 5, nome: 'Il Sigillo Perduto', descrizione: 'Marchio dimenticato di un antico patto oscuro.', simbolo: '🔮' },
+  { id: 6, nome: 'La Fiamma Eterna', descrizione: 'Brucia le illusioni e rivela l’essenza.', simbolo: '🔥' }
+];
+
+const Room4Carte = () => {
   const navigate = useNavigate();
+  const [selectedId, setSelectedId] = useState(null);
 
-  const handleButtonClick = (digit) => {
-    if (code.length < 4) {
-      setCode(prev => prev + digit);
+  useEffect(() => {
+    const access = sessionStorage.getItem('accessGrantedRoom4');
+    if (!access) {
+      navigate('/accesso-room4');
     }
-  };
-
-  const handleClear = () => {
-    setCode('');
-    setError(false);
-  };
-
-  const handleConfirm = () => {
-    if (code === '5555') {
-      sessionStorage.setItem('accessGrantedRoom4', 'true');
-      navigate('/room4-carte');
-    } else {
-      setError(true);
-      setTimeout(() => {
-        setCode('');
-        setError(false);
-      }, 1000);
-    }
-  };
+  }, [navigate]);
 
   return (
-    <div className="access-container">
-      <div className="door-frame">
-        <div className="door">
-          <h2 className="door-title">🔻 Porta della Camera di Báthory</h2>
-          <div className={`display ${error ? 'error' : ''}`}>{code.replace(/./g, '•')}</div>
-          <div className="keypad">
-            {[1,2,3,4,5,6,7,8,9,0].map((num) => (
-              <button key={num} onClick={() => handleButtonClick(num.toString())}>{num}</button>
-            ))}
-            <button onClick={handleClear} className="clear">Cancella</button>
-            <button onClick={handleConfirm} className="confirm">↵</button>
+    <div className="carte-container">
+      <h1>🃏 Le Sei Carte del Destino</h1>
+      <div className="carte-grid">
+        {carte.map((carta) => (
+          <div
+            key={carta.id}
+            className={`carta ${selectedId === carta.id ? 'selected' : ''}`}
+            onClick={() => setSelectedId(carta.id)}
+          >
+            <div className="simbolo">{carta.simbolo}</div>
+            <h2>{carta.nome}</h2>
+            <p>{carta.descrizione}</p>
           </div>
-        </div>
+        ))}
       </div>
     </div>
   );
 };
 
-export default AccessoRoom4;
+export default Room4Carte;
