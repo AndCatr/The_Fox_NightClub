@@ -21,7 +21,7 @@ const AccessoRoom4 = () => {
 
   const handleConfirm = () => {
     if (code === '5555') {
-      sessionStorage.setItem('accessGrantedRoom4', 'true');
+      localStorage.setItem('accessGrantedRoom4', 'true');
       navigate('/room4-carte');
     } else {
       setError(true);
