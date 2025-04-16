@@ -6,8 +6,8 @@ import './Room4Carte.css';
 const carte = [
   { id: 1, nome: '', descrizione: '', immagine: '/assets/carte/102_o.jpeg' },
   { id: 2, nome: '', descrizione: '', immagine: '/assets/carte/201_a.jpeg' },
-  { id: 3, nome: 'L’Occhio Inverso', descrizione: 'Vede ciò che è celato, ma distorce la realtà.', simbolo: '👁️' },
-  { id: 4, nome: 'La Coppa del Sangue', descrizione: 'Contiene il potere di un giuramento eterno.', simbolo: '🩸' },
+  { id: 3, nome: '', descrizione: '', immagine: '/assets/carte/2731.jpeg' },
+  { id: 4, nome: '', descrizione: '', immagine: '/assets/carte/08FD.jpeg' },
   { id: 5, nome: 'Il Sigillo Perduto', descrizione: 'Marchio dimenticato di un antico patto oscuro.', simbolo: '🔮' },
   { id: 6, nome: 'La Fiamma Eterna', descrizione: 'Brucia le illusioni e rivela l’essenza.', simbolo: '🔥' }
 ];
