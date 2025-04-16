@@ -37,6 +37,14 @@
   box-shadow: 0 0 25px rgba(255, 0, 150, 0.4);
 }
 
+.immagine-carta {
+  width: 100px;
+  height: auto;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
+}
+
 .simbolo {
   font-size: 3rem;
   margin-bottom: 0.5rem;
