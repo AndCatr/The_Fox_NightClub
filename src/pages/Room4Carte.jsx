@@ -36,14 +36,16 @@ const Room4Carte = () => {
       <div className="carte-grid">
         {carte.map((carta) => (
           <div
-            key={carta.id}
-            className={`carta ${selectedId === carta.id ? 'selected' : ''}`}
-            onClick={() => setSelectedId(carta.id)}
-          >
-            <img src={carta.immagine} alt={carta.nome} className="immagine-carta" />
-            <h2>{carta.nome}</h2>
-            <p>{carta.descrizione}</p>
-          </div>
+  key={carta.id}
+  className={`carta ${selectedId === carta.id ? 'selected' : ''}`}
+  onClick={() => setSelectedId(carta.id)}
+  style={{ backgroundImage: `url(${carta.immagine})` }}
+>
+  <div className="overlay">
+    <h2>{carta.nome}</h2>
+    <p>{carta.descrizione}</p>
+  </div>
+</div>
         ))}
       </div>
     </div>
