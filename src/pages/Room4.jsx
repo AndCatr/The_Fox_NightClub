@@ -51,4 +51,4 @@ const AccessoRoom4 = () => {
   );
 };
 
-export default AccessoRoom4;
+export default Room4;
