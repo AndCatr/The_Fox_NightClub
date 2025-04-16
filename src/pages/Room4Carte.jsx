@@ -40,7 +40,7 @@ const Room4Carte = () => {
             className={`carta ${selectedId === carta.id ? 'selected' : ''}`}
             onClick={() => setSelectedId(carta.id)}
           >
-            <div className="simbolo">{carta.simbolo}</div>
+            <div className="immagine">{carta.immagine}</div>
             <h2>{carta.nome}</h2>
             <p>{carta.descrizione}</p>
           </div>
