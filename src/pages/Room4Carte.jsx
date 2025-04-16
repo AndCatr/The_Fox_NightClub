@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import './Room4Carte.css';
 
 const carte = [
-  { id: 1, nome: 'Il Corvo', descrizione: 'Messaggero delle ombre, annuncia verità nascoste.', immagine: '/assets/carte/corvo.png' },
-  { id: 2, nome: 'La Chiave Antica', descrizione: 'Apre porte spirituali sigillate dal tempo.', immagine: '/assets/carte/corvo.png' },
+  { id: 1, nome: 'Il Corvo', descrizione: 'Messaggero delle ombre, annuncia verità nascoste.', immagine: '/assets/carte/102_o.jpeg' },
+  { id: 2, nome: 'La Chiave Antica', descrizione: 'Apre porte spirituali sigillate dal tempo.', immagine: '/assets/carte/201_a.jpeg' },
   { id: 3, nome: 'L’Occhio Inverso', descrizione: 'Vede ciò che è celato, ma distorce la realtà.', simbolo: '👁️' },
   { id: 4, nome: 'La Coppa del Sangue', descrizione: 'Contiene il potere di un giuramento eterno.', simbolo: '🩸' },
   { id: 5, nome: 'Il Sigillo Perduto', descrizione: 'Marchio dimenticato di un antico patto oscuro.', simbolo: '🔮' },
