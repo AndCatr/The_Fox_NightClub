@@ -1,7 +1,7 @@
 // src/pages/AccessoRoom4.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Room4.css';
+import '../Room4.css';
 
 const AccessoRoom4 = () => {
   const [code, setCode] = useState('');
