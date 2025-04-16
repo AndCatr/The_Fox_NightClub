@@ -23,6 +23,13 @@ const Room4Carte = () => {
     }
   }, [navigate]);
 
+  useEffect(() => {
+  // const access = sessionStorage.getItem('accessGrantedRoom4');
+  // if (!access) {
+  //   navigate('/room4');
+  // }
+}, [navigate]);
+  
   return (
     <div className="carte-container">
       <h1>🃏 Le Sei Carte del Destino</h1>
