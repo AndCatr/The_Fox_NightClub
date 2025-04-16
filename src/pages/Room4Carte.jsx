@@ -23,29 +23,17 @@ const Room4Carte = () => {
     }
   }, [navigate]);
 
-  useEffect(() => {
-  // const access = sessionStorage.getItem('accessGrantedRoom4');
-  // if (!access) {
-  //   navigate('/room4');
-  // }
-}, [navigate]);
-  
   return (
     <div className="carte-container">
       <h1>🃏 Le Sei Carte del Destino</h1>
       <div className="carte-grid">
         {carte.map((carta) => (
           <div
-  key={carta.id}
-  className={`carta ${selectedId === carta.id ? 'selected' : ''}`}
-  onClick={() => setSelectedId(carta.id)}
-  style={{ backgroundImage: `url(${carta.immagine})` }}
->
-  <div className="overlay">
-    <h2>{carta.nome}</h2>
-    <p>{carta.descrizione}</p>
-  </div>
-</div>
+            key={carta.id}
+            className={`carta ${selectedId === carta.id ? 'selected' : ''}`}
+            onClick={() => setSelectedId(carta.id)}
+            style={{ backgroundImage: `url(${carta.immagine})` }}
+          ></div>
         ))}
       </div>
     </div>
