@@ -10,8 +10,8 @@ const carte = [
   { id: 4, nome: '', descrizione: '', immagine: '/assets/carte/08FD.jpg' },
   { id: 5, nome: 'Il Sigillo Perduto', descrizione: 'Marchio dimenticato di un antico patto oscuro.', simbolo: '🔮' },
   { id: 6, nome: 'La Fiamma Eterna', descrizione: 'Brucia le illusioni e rivela l’essenza.', simbolo: '🔥' },
-  { id: 7, nome: '', descrizione: '', simbolo: 'F' },
-  { id: 8, nome: '', descrizione: '', simbolo: 'B' }
+  { id: 7, nome: '', descrizione: '', immagine: '/assets/carte/08FD.jpg' },
+  { id: 8, nome: '', descrizione: '', immagine: '/assets/carte/08FD.jpg' }
 ];
 
 const Room4Carte = () => {
