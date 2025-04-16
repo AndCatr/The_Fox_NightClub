@@ -22,43 +22,35 @@
 }
 
 .carta {
-  background: linear-gradient(145deg, #1f1f1f, #111);
-  border: 1px solid #444;
-  padding: 1.5rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 340px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem;
+  color: #fff;
   border-radius: 12px;
-  box-shadow: 0 0 15px rgba(255, 0, 100, 0.2);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 0 10px rgba(255, 0, 100, 0.15);
+  text-shadow: 0 0 5px #000;
+}
+
+.carta .overlay {
+  background: rgba(0, 0, 0, 0.5);
   width: 100%;
-  max-width: 280px;
-}
-
-.carta:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px rgba(255, 0, 150, 0.4);
-}
-
-.immagine-carta {
-  width: 120px;
-  height: auto;
-  margin-bottom: 0.75rem;
-  border-radius: 10px;
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.15);
-  transition: transform 0.2s ease;
-}
-
-.simbolo {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
+  padding: 1rem;
+  border-radius: 0 0 12px 12px;
 }
 
 .carta h2 {
+  margin: 0;
   font-size: 1.4rem;
-  margin: 0.5rem 0;
-  color: #fbcfe8;
+  color: #ffc6e4;
 }
 
 .carta p {
-  font-size: 1rem;
-  color: #ccc;
-  line-height: 1.4;
+  font-size: 0.95rem;
+  color: #f1f1f1;
 }
