@@ -17,7 +17,7 @@ const Room4Carte = () => {
   const [selectedId, setSelectedId] = useState(null);
 
   useEffect(() => {
-    const access = sessionStorage.getItem('accessGrantedRoom4');
+    const access = localStorage.getItem('accessGrantedRoom4');
     if (!access) {
       navigate('/room4');
     }
