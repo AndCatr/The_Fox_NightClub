@@ -1,5 +1,5 @@
 // src/pages/Room4Carte.jsx
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../Room4.css';
 
@@ -12,7 +12,7 @@ const carte = [
   { id: 6, nome: 'La Fiamma Eterna', descrizione: 'Brucia le illusioni e rivela l’essenza.', simbolo: '🔥' }
 ];
 
-const Room4Carte = () => {
+const Room4 = () => {
   const navigate = useNavigate();
   const [selectedId, setSelectedId] = useState(null);
 
