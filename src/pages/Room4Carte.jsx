@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../Room4.css";
+import emailjs from '@emailjs/browser';
 
 const carte = [
   "08FD.jpg",
@@ -13,6 +14,9 @@ const carte = [
 const Room4Carte = () => {
   const [selected, setSelected] = useState([]);
   const [finalCard, setFinalCard] = useState(null);
+  const [email, setEmail] = useState("");
+  const [emailSent, setEmailSent] = useState(false);
+  const [sending, setSending] = useState(false);
 
   const handleSelect = (card) => {
     if (finalCard) return;
@@ -30,11 +34,30 @@ const Room4Carte = () => {
     }
   };
 
+  const sendEmail = async () => {
+    setSending(true);
+    try {
+      await emailjs.send(
+        'your_service_id',
+        'your_template_id',
+        {
+          to_email: email,
+          card_url: `${window.location.origin}/assets/carte/${finalCard}`
+        },
+        'your_public_key'
+      );
+      setEmailSent(true);
+    } catch (error) {
+      console.error("Errore invio email:", error);
+    }
+    setSending(false);
+  };
+
   return (
     <div className="room4-carte-container">
       <h2 className="room4-title">🔻 Seleziona 3 figure per Lady Báthory</h2>
       <div className="carte-grid">
-        {carte.map((card, index) => (
+        {(finalCard ? [finalCard] : carte).map((card, index) => (
           <img
             key={index}
             src={`/assets/carte/${card}`}
@@ -57,6 +80,21 @@ const Room4Carte = () => {
             alt="Carta selezionata"
             className="final-card"
           />
+          {!emailSent ? (
+            <div className="email-form">
+              <input
+                type="email"
+                placeholder="Inserisci email di Eric"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <button onClick={sendEmail} disabled={!email || sending}>
+                {sending ? "Invio..." : "Invia via email"}
+              </button>
+            </div>
+          ) : (
+            <p className="success-message">📩 Email inviata con successo a {email}</p>
+          )}
         </div>
       )}
     </div>
