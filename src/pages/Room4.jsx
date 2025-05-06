@@ -37,13 +37,13 @@ const AccessoRoom4 = () => {
       <div className="door-frame">
         <div className="door">
           <h2 className="door-title">🔻 Porta della Camera di Báthory</h2>
-          <div className={`display ${error ? 'error' : ''}`}>{code.replace(/./g, '•')}</div>
+          <div className={`display ${error ? 'error' : ''}`}>{code.padEnd(4, '_')}</div>
           <div className="keypad">
-            {[1,2,3,4,5,6,7,8,9,0].map((num) => (
-              <button key={num} onClick={() => handleButtonClick(num.toString())}>{num}</button>
+            {[1,2,3,4,5,6,7,8,9,0].map((n, i) => (
+              <button key={i} onClick={() => handleButtonClick(n)}>{n}</button>
             ))}
-            <button onClick={handleClear} className="clear">Cancella</button>
-            <button onClick={handleConfirm} className="confirm">↵</button>
+            <button className="clear" onClick={handleClear}>↺</button>
+            <button className="enter" onClick={handleConfirm}>✔</button>
           </div>
         </div>
       </div>
