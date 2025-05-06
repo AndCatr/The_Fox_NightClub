@@ -6,6 +6,7 @@ import '../Room4.css';
 const AccessoRoom4 = () => {
   const [code, setCode] = useState('');
   const [error, setError] = useState(false);
+  const [open, setOpen] = useState(false);
   const navigate = useNavigate();
 
   const beepSound = useRef(null);
@@ -27,8 +28,8 @@ const AccessoRoom4 = () => {
   const handleConfirm = () => {
     if (code === '5555') {
       if (unlockSound.current) unlockSound.current.play();
-      localStorage.setItem('accessGrantedRoom4', 'true');
-      setTimeout(() => navigate('/room4-carte'), 400);
+      setOpen(true);
+      setTimeout(() => navigate('/room4-carte'), 1500);
     } else {
       setError(true);
       setTimeout(() => {
@@ -44,7 +45,7 @@ const AccessoRoom4 = () => {
       <audio ref={unlockSound} src="/sounds/unlock.mp3" preload="auto" />
 
       <div className="door-frame">
-        <div className="door">
+        <div className={`door ${open ? 'open' : ''}`}>
           <h2 className="door-title">🔻 Porta della Camera di Báthory</h2>
           <div className={`display ${error ? 'error' : ''}`}>{code.padEnd(4, '_')}</div>
           <div className="keypad">
