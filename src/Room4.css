@@ -63,6 +63,7 @@ body {
 .keypad {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, auto);
   gap: 0.5rem;
   justify-items: center;
 }
@@ -77,6 +78,8 @@ body {
   cursor: pointer;
   transition: background 0.3s, transform 0.2s;
   box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+  width: 60px;
+  height: 60px;
 }
 
 .keypad button:hover {
@@ -86,20 +89,18 @@ body {
 }
 
 .keypad .clear {
-  grid-column: span 2;
   background-color: #400;
   color: #fff;
   border-color: #922;
 }
 
 .keypad .enter {
-  grid-column: span 2;
   background-color: #2d4;
   color: #000;
   border-color: #6d6;
 }
 
-/* Manteniamo anche lo stile carte per Room4Carte */
+/* ---------- ROOM4-CARTE STYLES ---------- */
 .room4-carte-container {
   background: linear-gradient(145deg, #0f0f0f, #1a1a1a);
   color: #f5e8c7;
