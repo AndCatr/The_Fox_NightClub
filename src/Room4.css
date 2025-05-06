@@ -1,5 +1,105 @@
 /* Room4.css */
 
+/* ---------- STILE GENERALE ---------- */
+body {
+  background: linear-gradient(145deg, #0a0a0a, #1b1b1b);
+  color: #f5e8c7;
+  font-family: 'Georgia', serif;
+}
+
+/* ---------- CONTAINER ---------- */
+.access-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #0f0f0f;
+}
+
+.door-frame {
+  border: 5px double #d4af37;
+  padding: 2rem;
+  border-radius: 20px;
+  background-color: #1a1a1a;
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.3);
+  text-align: center;
+  max-width: 400px;
+}
+
+.door-title {
+  color: #d4af37;
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.15);
+}
+
+/* ---------- DISPLAY ---------- */
+.display {
+  font-size: 2rem;
+  background-color: #000;
+  color: #d4af37;
+  border: 2px solid #d4af37;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1rem;
+}
+
+.display.error {
+  animation: shake 0.4s ease-in-out;
+  color: #ff4d4d;
+  border-color: #ff4d4d;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+/* ---------- KEYPAD ---------- */
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  justify-items: center;
+}
+
+.keypad button {
+  background-color: #111;
+  color: #d4af37;
+  font-size: 1.2rem;
+  padding: 0.8rem 1rem;
+  border: 2px solid #d4af37;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+}
+
+.keypad button:hover {
+  background-color: #222;
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.4);
+}
+
+.keypad .clear {
+  grid-column: span 2;
+  background-color: #400;
+  color: #fff;
+  border-color: #922;
+}
+
+.keypad .enter {
+  grid-column: span 2;
+  background-color: #2d4;
+  color: #000;
+  border-color: #6d6;
+}
+
+/* Manteniamo anche lo stile carte per Room4Carte */
 .room4-carte-container {
   background: linear-gradient(145deg, #0f0f0f, #1a1a1a);
   color: #f5e8c7;
