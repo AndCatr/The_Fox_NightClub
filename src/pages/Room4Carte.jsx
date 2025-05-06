@@ -38,13 +38,13 @@ const Room4Carte = () => {
     setSending(true);
     try {
       await emailjs.send(
-        'your_service_id',
-        'your_template_id',
+        'service_dgg9q0p',
+        'template_x71dntq',
         {
           to_email: email,
           card_url: `${window.location.origin}/assets/carte/${finalCard}`
         },
-        'your_public_key'
+        'wwrtDb-TggvANw25m'
       );
       setEmailSent(true);
     } catch (error) {
