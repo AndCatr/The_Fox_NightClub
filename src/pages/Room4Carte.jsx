@@ -1,43 +1,64 @@
-// src/pages/Room4Carte.jsx
-import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import './Room4Carte.css';
+import React, { useState } from "react";
+import "../Room4.css";
 
 const carte = [
-  { id: 1, nome: '', descrizione: '', immagine: '/assets/carte/102_o.jpeg' },
-  { id: 2, nome: '', descrizione: '', immagine: '/assets/carte/201_a.jpeg' },
-  { id: 3, nome: '', descrizione: '', immagine: '/assets/carte/2731.JPG' },
-  { id: 4, nome: '', descrizione: '', immagine: '/assets/carte/08FD.jpg' },
-  { id: 5, nome: 'Il Sigillo Perduto', descrizione: 'Marchio dimenticato di un antico patto oscuro.', simbolo: '🔮' },
-  { id: 6, nome: 'La Fiamma Eterna', descrizione: 'Brucia le illusioni e rivela l’essenza.', simbolo: '🔥' },
-  { id: 7, nome: '', descrizione: '', immagine: '/assets/carte/08FD.jpg' },
-  { id: 8, nome: '', descrizione: '', immagine: '/assets/carte/08FD.jpg' }
+  "08FD.jpg",
+  "102_o.jpeg",
+  "201_a.jpeg",
+  "2731.JPG",
+  "card5.jpg",
+  "card6.jpg"
 ];
 
 const Room4Carte = () => {
-  const navigate = useNavigate();
-  const [selectedId, setSelectedId] = useState(null);
+  const [selected, setSelected] = useState([]);
+  const [finalCard, setFinalCard] = useState(null);
 
-  useEffect(() => {
-    const access = localStorage.getItem('accessGrantedRoom4');
-    if (!access) {
-      navigate('/room4');
+  const handleSelect = (card) => {
+    if (finalCard) return;
+    if (selected.includes(card)) {
+      setSelected(selected.filter(c => c !== card));
+    } else if (selected.length < 3) {
+      setSelected([...selected, card]);
     }
-  }, [navigate]);
+  };
+
+  const handleDraw = () => {
+    if (selected.length === 3) {
+      const randomCard = selected[Math.floor(Math.random() * 3)];
+      setFinalCard(randomCard);
+    }
+  };
 
   return (
-    <div className="carte-container">
-      <h1>🃏 Scegli le 4 situazioni da proporre al cliente</h1>
+    <div className="room4-carte-container">
+      <h2 className="room4-title">🔻 Seleziona 3 figure per Lady Báthory</h2>
       <div className="carte-grid">
-        {carte.map((carta) => (
-          <div
-            key={carta.id}
-            className={`carta ${selectedId === carta.id ? 'selected' : ''}`}
-            onClick={() => setSelectedId(carta.id)}
-            style={{ backgroundImage: `url(${carta.immagine})` }}
-          ></div>
+        {carte.map((card, index) => (
+          <img
+            key={index}
+            src={`/assets/carte/${card}`}
+            alt={`Carta ${index + 1}`}
+            className={`carta ${selected.includes(card) ? "selected" : ""}`}
+            onClick={() => handleSelect(card)}
+          />
         ))}
       </div>
+      {selected.length === 3 && !finalCard && (
+        <button className="draw-button" onClick={handleDraw}>
+          Sorteggia una tra le 3 carte
+        </button>
+      )}
+      {finalCard && (
+        <div className="final-card-display">
+          <h3>La carta prescelta da Lady Báthory è...</h3>
+          <img
+            src={`/assets/carte/${finalCard}`}
+            alt="Carta selezionata"
+            className="final-card"
+          />
+        </div>
+      )}
     </div>
   );
 };
