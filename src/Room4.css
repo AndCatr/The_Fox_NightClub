@@ -7,6 +7,16 @@ body {
   font-family: 'Georgia', serif;
 }
 
+nav a {
+  color: #d4af37 !important;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
 /* ---------- CONTAINER ---------- */
 .access-container {
   display: flex;
@@ -118,10 +128,10 @@ body {
 }
 
 .carte-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+  justify-items: center;
   margin-bottom: 2rem;
 }
 
