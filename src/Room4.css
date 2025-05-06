@@ -191,3 +191,19 @@ nav a:hover {
   box-shadow: 0 0 30px rgba(212, 175, 55, 0.9);
   margin-top: 1.5rem;
 }
+/* ...tutto il CSS precedente... */
+
+.door-frame.open {
+  animation: openDoor 1s ease forwards;
+}
+
+@keyframes openDoor {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.1) translateY(-20px);
+    opacity: 0;
+  }
+}
