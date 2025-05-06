@@ -1,5 +1,5 @@
 // src/pages/Room4.jsx
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../Room4.css';
 
@@ -8,21 +8,27 @@ const AccessoRoom4 = () => {
   const [error, setError] = useState(false);
   const navigate = useNavigate();
 
+  const beepSound = useRef(null);
+  const unlockSound = useRef(null);
+
   const handleButtonClick = (digit) => {
     if (code.length < 4) {
       setCode(prev => prev + digit);
+      if (beepSound.current) beepSound.current.play();
     }
   };
 
   const handleClear = () => {
     setCode('');
     setError(false);
+    if (beepSound.current) beepSound.current.play();
   };
 
   const handleConfirm = () => {
     if (code === '5555') {
+      if (unlockSound.current) unlockSound.current.play();
       localStorage.setItem('accessGrantedRoom4', 'true');
-      navigate('/room4-carte');
+      setTimeout(() => navigate('/room4-carte'), 400);
     } else {
       setError(true);
       setTimeout(() => {
@@ -34,6 +40,9 @@ const AccessoRoom4 = () => {
 
   return (
     <div className="access-container">
+      <audio ref={beepSound} src="/sounds/beep.mp3" preload="auto" />
+      <audio ref={unlockSound} src="/sounds/unlock.mp3" preload="auto" />
+
       <div className="door-frame">
         <div className="door">
           <h2 className="door-title">🔻 Porta della Camera di Báthory</h2>
